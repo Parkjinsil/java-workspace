@@ -82,11 +82,12 @@ public class VariablePractice {
 		System.out.println("문자열을 입력하세요.  : ");
 		String st = sc.nextLine();
 		
-		char fir = st.charAt(0);
+		char fir1 = st.charAt(0);
+		char fir2 = st.charAt(7);
 		
 		
-		System.out.println("첫 번째 문자 : "+fir);
-		System.out.println("마지막 문자 : "+fir);
+		System.out.println("첫 번째 문자 : "+fir1);
+		System.out.println("마지막 문자 : "+fir2);
 	}
 }
 
