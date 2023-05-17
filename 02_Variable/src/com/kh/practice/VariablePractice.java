@@ -65,9 +65,10 @@ public class VariablePractice {
 		int y = 7;
 		int z = 9;
 		
-		x=x+2;
-		y=y+2;
-		z=z-4;
+		int d = x;
+		x=y;
+		y=z;
+		z=d;
 		
 		System.out.println("x=" + x);
 		System.out.println("y=" + y);
@@ -79,11 +80,12 @@ public class VariablePractice {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("문자열을 입력하세요.  : ");
+		System.out.print("문자열을 입력하세요.  : ");
 		String st = sc.nextLine();
 		
 		char fir1 = st.charAt(0);
-		char fir2 = st.charAt(7);
+		int len = st.length();
+		char fir2 = st.charAt(len-1);
 		
 		
 		System.out.println("첫 번째 문자 : "+fir1);
