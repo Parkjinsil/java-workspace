@@ -8,11 +8,11 @@ public class OperatorPractice {
 		
 		OperatorPractice op = new OperatorPractice();
 //		op.method1();
-		op.method2();
+//		op.method2();
 //		op.method3();
 //		op.method4();
 //		op.method5();
-//		op.method6();
+		op.method6();
 		
 	}
 	
@@ -86,11 +86,12 @@ public class OperatorPractice {
 		System.out.print("바구니의 크기 : ");
 		int b = sc.nextInt();
 		
-		System.out.println("필요한 바구니의 수 : "+(a/b+1));
+		int c = (a%b == 0) ? 0:1;
+		
+		System.out.println("필요한 바구니의 수 : "+(a/b+c));
 	}
 	
 }
-
 
 
 
