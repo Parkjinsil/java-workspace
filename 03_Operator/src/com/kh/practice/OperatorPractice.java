@@ -51,7 +51,7 @@ public class OperatorPractice {
 		System.out.print("입력3 : ");
 		int num3 = sc.nextInt();
 		
-		boolean result = (num1 == num2) &&(num2 == num3);
+		boolean result = (num1 == num2) && (num2 == num3);
 		System.out.println(result);
 		
 	}
@@ -92,17 +92,3 @@ public class OperatorPractice {
 	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
