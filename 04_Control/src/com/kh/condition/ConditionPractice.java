@@ -14,12 +14,12 @@ public class ConditionPractice {
 //		cp.practice3();
 //		cp.practice4();
 //		cp.practice5();
-		cp.practice6();
+//		cp.practice6();
 //		cp.practice7();
 //		cp.practice8();
 //		cp.practice9();
 //		cp.practice10();
-//		cp.practice11();
+		cp.practice11();
 		
 	}
 	
@@ -79,8 +79,8 @@ public class ConditionPractice {
     	System.out.print("피자 먹는 사람 수 : ");
     	int b = sc.nextInt();
     	
-    	if (a==b) System.out.println("시켜야 하는 피자 수 :"+b/a);
-    	else System.out.println("시켜야 하는 피자 수 : "+(b/a+1));
+    	if (b%a == 0) System.out.println("시켜야 하는 피자 수 :"+b/a); // 같은 경우만 조건을 걸게 되면 요런 경우는 어떨까요? 피자 조각 수는 8조각인데, 피자 먹는 사람 수는 16명!
+    	else System.out.println("시켜야 하는 피자 수 : "+(b/a+1)); // 시도해보시면 엇? 이상하다 싶을 거에요 :) 
     }
 
     /*
@@ -116,9 +116,8 @@ public class ConditionPractice {
     	int sum = a+b+c;
     	double aver = sum/3;
     	
-        if (a < 40) System.out.println("불합격입니다.");
-        else if (b < 40) System.out.println("불합격입니다.");
-        else if (c < 40) System.out.println("불합격입니다.");
+    	// 요기~~ 불합격입니다! 출력하는 부분이 계속 나오고 있는데요! 이걸 하나의 조건식으로 바꿔 보는 걸 시도해볼까요?
+        if (a<40 || b<40 || c<40) System.out.println("불합격입니다."); 
         else {
         	if (aver >= 60) {
         		System.out.println("합계 : " + sum);
@@ -217,13 +216,16 @@ public class ConditionPractice {
     	double w = sc.nextDouble();
     	
     	double b = w/(h*h);
+    	String result = null;
     	
     	System.out.println("BMI 지수 : "+b);
-    	if (b < 18.5) System.out.println("저체중");
-    	else if (b < 23) System.out.println("정상체중");
-    	else if (b < 25) System.out.println("과체중");
-    	else if (b < 30) System.out.println("비만");
-    	else System.out.println("고도비만");
+    	if (b < 18.5) result = "저체중";
+    	else if (b < 23) result = "정상체중";
+    	else if (b < 25) result = "과체중";
+    	else if (b < 30) result = "비만";
+    	else result = "고도비만";
+    	
+    	System.out.println(result);
     	
     }
 
@@ -239,18 +241,28 @@ public class ConditionPractice {
 
      */
     public void practice9() {
-    	System.out.print("피연산자1 입력 :");
+    	System.out.print("피연산자1 입력 : ");
     	int a = sc.nextInt();
-    	System.out.print("피연산자2 입력 :");
+    	System.out.print("피연산자2 입력 : ");
     	int b = sc.nextInt();
-    	System.out.print("연산자 입력(+,-,*,/,%) :");
-    	char c = sc.next().charAt(0);
+    	System.out.print("연산자 입력(+,-,*,/,%) : ");
+    	char c = sc.nextLine().charAt(0);
     	
-    	if (c == '+') System.out.println(a+b);
-    	else if (c == '-') System.out.println(a-b);
-    	else if (c == '*') System.out.println(a*b);
-    	else if (c == '/') System.out.println(a/b);
-    	else if (c == '%') System.out.println(a%b);
+    	
+    	// 잘 풀었지만! 한가지 더 해보면 좋겠다 싶은 부분이 있어 코멘트 남겨요!
+    	// 아마 수업시간에 제가 변수로 뺐던 부분이 있어 그 부분 참고해서 System.out.println을 줄여보는 건 어떨까요?
+    	// 이 문제는 그렇게 푸는게 더 좋지 않을까? 싶어서요!
+    	// 만약 시간 괜찮으시다면 8번 문제도 추천드리구요!
+    	
+    	int d=0;
+    	
+    	if (c == '+') d=a+b;
+    	else if (c == '-') d=a-b;
+    	else if (c == '*') d=a*b;
+    	else if (c == '/') d=a/b;
+    	else if (c == '%') d=a%b;
+    	
+    	if (c=='+'||c=='-'||c=='*'||c=='/'||c=='%') System.out.println(d);
     	else System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다.");
     }
 
@@ -338,23 +350,23 @@ public class ConditionPractice {
      */
     public void practice11() {
     	System.out.print("중간 고사 점수 : ");
-    	double a = sc.nextDouble();
+    	double a = sc.nextDouble()*1/5;
     	System.out.print("기말 고사 점수 : ");
-    	double b = sc.nextDouble();
+    	double b = sc.nextDouble()*3/10;
     	System.out.print("과제 점수 : ");
-    	double c = sc.nextDouble();
+    	double c = sc.nextDouble()*3/10;
     	System.out.print("출석 횟수 : ");
     	int d = sc.nextInt();
     	
-    	double sum = a*1/5 + b*3/10 + c*3/10 + d;
+    	double sum = a + b + c + d; // <- 요기랑
     	
     	System.out.println("=========결과=========");
     	
     	if ( d >= 14) {
-    		if (sum >= 70) {
-    			System.out.println("중간 고사 점수(20) : "+ a*1/5);
-    			System.out.println("기말 고사 점수(30) : "+ b*3/10);
-    			System.out.println("과제 점수(30) : "+ c*3/10);
+    		if (sum >= 70) { // -> 요 아래 약간 또 다시 계산하게 되는 부분이 있는데요! 만약 이 부분 줄여보고 싶다면 위에서 아예 계산해버리고 오는 것도 좋아요!
+    			System.out.println("중간 고사 점수(20) : "+ a);
+    			System.out.println("기말 고사 점수(30) : "+ b);
+    			System.out.println("과제 점수(30) : "+ c);
     			System.out.println("출석 횟수(20) : "+ d);
     			System.out.println("총점 : "+sum);
     			System.out.println("PASS");
