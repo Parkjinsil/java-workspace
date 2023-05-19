@@ -13,13 +13,13 @@ public class ConditionPractice {
 //		cp.practice2();
 //		cp.practice3();
 //		cp.practice4();
-//		cp.practice5();
+		cp.practice5();
 //		cp.practice6();
 //		cp.practice7();
 //		cp.practice8();
 //		cp.practice9();
 //		cp.practice10();
-		cp.practice11();
+//		cp.practice11();
 		
 	}
 	
@@ -139,11 +139,15 @@ public class ConditionPractice {
     public void practice5() {
     	System.out.print("구매한 옷 가격 : ");
     	int p = sc.nextInt();
+        double a;	
+    
+    	if (p < 100000) a=p;
+    	else if (p < 300000) a = p*0.95;
+    	else if (p < 500000) a = p*0.9;
+    	else a = p*0.8;
     	
-    	if (p < 100000) System.out.println(p);
-    	else if (p < 300000) System.out.println(p * 95/100);
-    	else if (p < 500000) System.out.println(p * 9/10);
-    	else System.out.println(p * 4/5);
+    	int b = (int) a;
+    	System.out.println(b);
     }
 
 
