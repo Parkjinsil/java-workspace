@@ -107,20 +107,79 @@ public class D_While {
 	public void method5() {
 		
 		int a = (int) (Math.random()*100+1);
-		int i =0;
+		int input =0;
+		int count =0;
 		
 		while (true) {
+			count++;
+			
 			System.out.print("1과 100 사이의 값 입력 > ");
-			int num =sc.nextInt();
+			input =sc.nextInt();
 			
-			i+=1;
 			
-			if(num>a) System.out.println("더 작은 수를 입력하세요.");
-			else if (num<a) System.out.println("더 큰 수를 입력하세요.");
-			else {System.out.println(i+"번 만에 맞췄습니다.");
+			if(input>a) System.out.println("더 작은 수를 입력하세요.");
+			else if (input<a) System.out.println("더 큰 수를 입력하세요.");
+			else {System.out.println(count+"번 만에 맞췄습니다.");
 			     break;
+			     }
 			}
-			}
+		
+	}
+	
+	/*
+	 * --------------------------------
+	 * 1.예금 | 2. 출금 | 3. 잔고 | 4. 종료
+	 * --------------------------------
+	 * 선택 > 1
+	 * 예금액 > 5000
+	 * 
+	 * --------------------------------
+	 * 1.예금 | 2. 출금 | 3. 잔고 | 4. 종료
+	 * --------------------------------
+	 * 선택 > 3
+	 * 잔고 > 3000
+	 * 
+	 * --------------------------------
+	 * 1.예금 | 2. 출금 | 3. 잔고 | 4. 종료
+	 * --------------------------------
+	 * 선택 > 2
+	 * 출금액 > 2000
+	 * 
+	 * --------------------------------
+	 * 1.예금 | 2. 출금 | 3. 잔고 | 4. 종료
+	 * --------------------------------
+	 */
+	public void method6() {
+		
+		int balance = 0;
+		boolean run = true;
+		
+		while(run) {
+			System.out.println("--------------------------------\n"
+					+ "1.예금 | 2. 출금 | 3. 잔고 | 4. 종료\n"
+					+ "--------------------------------");
+			
+			System.out.println("선택 > ");
+			// Integer.parseInk : Integer 클래스의 parseInt 메소드
+			int menu = Integer.parseInt(sc.nextLine());
+			switch (menu) {
+			case 1: 
+				System.out.println("예금액 > ");
+				balance += Integer.parseInt(sc.nextLine());
+				break;
+			case 2: 
+				System.out.println("출금액 > ");
+				balance -= Integer.parseInt(sc.nextLine());
+				break;
+			case 3: 
+				System.out.println("잔고 > ");
+				System.out.println(balance);
+				break;
+			case 4:	
+				run = false;
+				break;
+			}			
+		} System.out.println("프로그램 종료");
 		
 	}
 	
@@ -131,9 +190,8 @@ public class D_While {
 //		d.method2();
 //		d.method3();
 //		d.method4();
-		d.method5();
-//		d.method6();
-//		d.method7();
+//		d.method5();
+		d.method6();
 		
 	}
 		
