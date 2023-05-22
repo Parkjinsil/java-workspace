@@ -12,8 +12,8 @@ public class ArrayPractice {
 		ArrayPractice ap = new ArrayPractice();
 //		ap.method1();
 //		ap.method2();
-		ap.method3();
-//		ap.method4();
+//		ap.method3();
+		ap.method4();
 //		ap.method5();
 		
 	}
@@ -100,10 +100,19 @@ public class ArrayPractice {
 		
 		int[] number = new int[13];
 		System.out.print("주민등록번호 : ");
-		int a = sc.nextInt();
+		String a = sc.nextLine();
 		
-		for (int i=0; i<number.length; i++) {
-//			number[i]= a
+		for (int i=0; i<13; i++) {
+			number[i]= a.charAt(i);
+		}
+		
+		int[] copy = number.clone();
+		for(int j=8; j<13; j++) {
+			copy[j]= "*";
+		}
+			
+		for(int k : copy) {
+			System.out.print(k);
 		}
 		
 		
@@ -120,11 +129,13 @@ public class ArrayPractice {
 		
 		System.out.print("단어 입력 : ");
 		String word = sc.nextLine();
+		char[] array = new char [word.length()];
 		
 		for(int i=0; i<word.length(); i++) {
-			String[] array = new String[word.length()];
-		  //  array[i] = word.charAt(i);
-			
+		    array[i] = word.charAt(i);
+			}
+		for(int j=word.length()-1; j>=0; j--) {
+			System.out.print(array[j]);
 		}
 		
 	}

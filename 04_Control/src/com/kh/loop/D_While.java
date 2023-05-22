@@ -190,8 +190,8 @@ public class D_While {
 //		d.method2();
 //		d.method3();
 //		d.method4();
-//		d.method5();
-		d.method6();
+		d.method5();
+//		d.method6();
 		
 	}
 		

@@ -9,10 +9,10 @@ class LoopPractice {
 	public static void main(String[] args) {
 		
 		LoopPractice lp = new LoopPractice();
-//		lp.method1();
+//		lp.method1(); //
 //		lp.method2();
-//		lp.method3();
-//		lp.method4();
+//		lp.method3(); //
+//		lp.method4(); //
 		lp.method5();
 //		lp.method6();
 		
@@ -102,43 +102,28 @@ class LoopPractice {
      */
     public void method5() {
 
-    	int a=0;
-		int b=0;
-		int c=0;
-		int d=0;
-		int e=0;
-		int f=0;
-		int sum = a+b+c+d+e+f;
+    	int a=0, b=0, c=0, d=0, e=0, f=0;
     	
-    	while(sum<=10) {
+    	while(true) {
     		int num = (int) (Math.random()*10+1);
     		
-    		switch(num) {
-    		case 1 : a+=1;
-    		     break;
-    		case 2 : b+=1;
-    		     break;
-    		case 3 : c+=1;
-    		     break;
-    		case 4 : d+=1;
-    		     break;
-    		case 5 : e+=1;
-    		     break;
-    		case 6 : f+=1;
-    		     break;
-    		}
-    		sum = a+b+c+d+e+f;
-    	
-    		if (sum==10) break;
-    		System.out.println("1 : "+a);
-        	System.out.println("2 : "+b);
-        	System.out.println("3 : "+c);
-        	System.out.println("4 : "+d);
-        	System.out.println("5 : "+e);
-        	System.out.println("6 : "+f);
-    		
-    	} 
-    	
+    	    if (num==1) a+=1;
+    	    else if (num==2) b+=1;
+    	    else if (num==3) c+=1;
+    	    else if (num==4) d+=1;
+    	    else if (num==5) e+=1;
+    	    else if (num==6) f+=1;
+    	    
+    	    int sum=a+b+c+d+e+f;
+    	    if (sum ==10) {
+    	    	System.out.println("1 : "+a);
+            	System.out.println("2 : "+b);
+            	System.out.println("3 : "+c);
+            	System.out.println("4 : "+d);
+            	System.out.println("5 : "+e);
+            	System.out.println("6 : "+f);
+    	    } break;
+    	    }    	
     }
 
     /*
@@ -164,7 +149,14 @@ class LoopPractice {
         이겼습니다 !
     */
     public void method6() {
-
+    	
+    	while(true) {
+    		System.out.print("당신의 이름을 입력해주세요 : ");
+        	String name = sc.nextLine();
+        	
+        	int r = (int) (Math.random()*10+1);
+    	}
+    	
     }
 
 }

@@ -13,13 +13,13 @@ public class ConditionPractice {
 //		cp.practice2();
 //		cp.practice3();
 //		cp.practice4();
-		cp.practice5();
+//		cp.practice5();
 //		cp.practice6();
 //		cp.practice7();
 //		cp.practice8();
 //		cp.practice9();
 //		cp.practice10();
-//		cp.practice11();
+		cp.practice11();
 		
 	}
 	
@@ -116,16 +116,12 @@ public class ConditionPractice {
     	int sum = a+b+c;
     	double aver = sum/3;
     	
-    	// 요기~~ 불합격입니다! 출력하는 부분이 계속 나오고 있는데요! 이걸 하나의 조건식으로 바꿔 보는 걸 시도해볼까요?
-        if (a<40 || b<40 || c<40) System.out.println("불합격입니다."); 
-        else {
-        	if (aver >= 60) {
-        		System.out.println("합계 : " + sum);
-            	System.out.println("평균 : " + aver);
-        		System.out.println("축하합니다, 합격입니다!");
-        	}
-        	else System.out.println("불합격입니다.");
-        }
+    	// 코멘트를 수정해서 보낸다면! && 연산자 사용해보면 중첩 if문 쓰지 않고 해볼 수 있을거에요!
+        if (a>=40 && b>=40 && c>=40 && aver >= 60) {
+        	System.out.println("합계 : " + sum);
+        	System.out.println("평균 : " + aver);
+    		System.out.println("축하합니다, 합격입니다!");
+        } else System.out.println("불합격입니다.");
     	
     }
 
@@ -139,15 +135,11 @@ public class ConditionPractice {
     public void practice5() {
     	System.out.print("구매한 옷 가격 : ");
     	int p = sc.nextInt();
-        double a;	
-    
-    	if (p < 100000) a=p;
-    	else if (p < 300000) a = p*0.95;
-    	else if (p < 500000) a = p*0.9;
-    	else a = p*0.8;
     	
-    	int b = (int) a;
-    	System.out.println(b);
+    	if (p < 100000) System.out.println(p);
+    	else if (p < 300000) System.out.println(p * 95/100);
+    	else if (p < 500000) System.out.println(p * 9/10);
+    	else System.out.println(p * 4/5);
     }
 
 
@@ -252,12 +244,6 @@ public class ConditionPractice {
     	System.out.print("연산자 입력(+,-,*,/,%) : ");
     	char c = sc.nextLine().charAt(0);
     	
-    	
-    	// 잘 풀었지만! 한가지 더 해보면 좋겠다 싶은 부분이 있어 코멘트 남겨요!
-    	// 아마 수업시간에 제가 변수로 뺐던 부분이 있어 그 부분 참고해서 System.out.println을 줄여보는 건 어떨까요?
-    	// 이 문제는 그렇게 푸는게 더 좋지 않을까? 싶어서요!
-    	// 만약 시간 괜찮으시다면 8번 문제도 추천드리구요!
-    	
     	int d=0;
     	
     	if (c == '+') d=a+b;
@@ -266,8 +252,8 @@ public class ConditionPractice {
     	else if (c == '/') d=a/b;
     	else if (c == '%') d=a%b;
     	
-    	if (c=='+'||c=='-'||c=='*'||c=='/'||c=='%') System.out.println(d);
-    	else System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다.");
+    	if (c=='+'||c=='-'||c=='*'||c=='/'||c=='%') System.out.println(d); // 요게 싫으시다면~~ switch문으로 바꿔보는 것도 좋아요! 앗! 그럼 각각 출력하는 코드가 더 낫게 되네요;;;;
+    	else System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다."); 
     }
 
     /*
@@ -367,7 +353,7 @@ public class ConditionPractice {
     	System.out.println("=========결과=========");
     	
     	if ( d >= 14) {
-    		if (sum >= 70) { // -> 요 아래 약간 또 다시 계산하게 되는 부분이 있는데요! 만약 이 부분 줄여보고 싶다면 위에서 아예 계산해버리고 오는 것도 좋아요!
+    		if (sum >= 70) { 
     			System.out.println("중간 고사 점수(20) : "+ a);
     			System.out.println("기말 고사 점수(30) : "+ b);
     			System.out.println("과제 점수(30) : "+ c);
@@ -378,13 +364,10 @@ public class ConditionPractice {
     		else {
     			System.out.println("FAIL [점수 미달] (총점 " + sum +")");
     		}
-    	} else  {
-    		if (sum >= 70) System.out.println("FAIL [출석 횟수 부족] (" + d +"/20)");
-    		else {
-    			System.out.println("FAIL [출석 횟수 부족] (" + d +"/20)");
-    			System.out.println("FAIL [점수 미달] (총점 " + sum +")");
+    	} else  { // 여기도 만약 FAIL [출석 횟수 부족] 을 한 번만 쓰고 싶다! 그렇다면 if문 가지고 활용해보는 것도 좋아요!
+    		System.out.println("FAIL [출석 횟수 부족] (" + d +"/20)");
+    		if (sum < 70) System.out.println("FAIL [점수 미달] (총점 " + sum +")");
     		}
-    	}
     }
     
 }
