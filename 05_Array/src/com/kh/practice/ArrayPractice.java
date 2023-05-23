@@ -108,7 +108,7 @@ public class ArrayPractice {
 		
 		int[] copy = number.clone();
 		for(int j=8; j<13; j++) {
-			copy[j]= "*";
+//			copy[j]= "*";
 		}
 			
 		for(int k : copy) {
