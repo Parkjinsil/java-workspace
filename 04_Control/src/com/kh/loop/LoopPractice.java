@@ -103,27 +103,30 @@ class LoopPractice {
     public void method5() {
 
     	int a=0, b=0, c=0, d=0, e=0, f=0;
+    	int count =0;
     	
     	while(true) {
-    		int num = (int) (Math.random()*10+1);
+    		int num = (int) (Math.random()*6+1);
     		
     	    if (num==1) a+=1;
     	    else if (num==2) b+=1;
     	    else if (num==3) c+=1;
     	    else if (num==4) d+=1;
     	    else if (num==5) e+=1;
-    	    else if (num==6) f+=1;
+    	    else f+=1;
     	    
-    	    int sum=a+b+c+d+e+f;
-    	    if (sum ==10) {
+    	    count++;
+    	    
+    	    if (count == 10) {
     	    	System.out.println("1 : "+a);
-            	System.out.println("2 : "+b);
-            	System.out.println("3 : "+c);
-            	System.out.println("4 : "+d);
-            	System.out.println("5 : "+e);
-            	System.out.println("6 : "+f);
-    	    } break;
-    	    }    	
+    	    	System.out.println("2 : "+b);
+    	    	System.out.println("3 : "+c);
+    	    	System.out.println("4 : "+d);
+    	    	System.out.println("5 : "+e);
+    	    	System.out.println("6 : "+f);
+    	    	break;
+    	    } 
+    	    }
     }
 
     /*

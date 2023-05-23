@@ -30,11 +30,11 @@ public class Video {
 		
 	}
 	
-	public void viewUpdate() { // 동영상 수정
+	public void updateVideo() { // 동영상 수정
 		
 	}
 	
-	public void deleVideo() { // 동영상 삭제
+	public void deleteVideo() { // 동영상 삭제
 		
 	}
 	
