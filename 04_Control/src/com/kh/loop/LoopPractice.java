@@ -10,11 +10,11 @@ class LoopPractice {
 		
 		LoopPractice lp = new LoopPractice();
 //		lp.method1(); //
-//		lp.method2();
+//		lp.method2(); //
 //		lp.method3(); //
 //		lp.method4(); //
-		lp.method5();
-//		lp.method6();
+//		lp.method5(); //
+		lp.method6();
 		
 	}
 	
@@ -41,7 +41,16 @@ class LoopPractice {
     // 1+(-2)+3+(-4)+...과 같은 식으로 계속 더해나갔을 때, 몇까지 더해야 총합이 100 이상 되는지 출력하시오.
     public void method2() {
 
+    	int n=0;
+    	int sum=0;
     	
+    	for(int i=1; ;i++) {
+    		sum += Math.pow(-1,i+1)*i;
+    		n++;
+    		if (sum==100) break;
+    	}
+    	
+    	System.out.println(n+"까지 더해야 총합이 100");
     	
     }
 
@@ -153,11 +162,46 @@ class LoopPractice {
     */
     public void method6() {
     	
+    	System.out.print("당신의 이름을 입력해주세요 : ");
+    	String name = sc.nextLine();
+    	
     	while(true) {
-    		System.out.print("당신의 이름을 입력해주세요 : ");
-        	String name = sc.nextLine();
+        	int c = (int) (Math.random()*3)+1;
         	
-        	int r = (int) (Math.random()*10+1);
+        	System.out.print("가위바위보 : ");
+        	String rsp = sc.nextLine();
+        	
+        	if(c==1) {
+        		System.out.println("컴퓨터 : 가위");
+        		System.out.println(name+" : "+rsp);
+        		if (rsp.equals("바위")) {
+        			System.out.println("이겼습니다."); break;
+        		}
+        		else if (rsp.equals("보")) System.out.println("졌습니다ㅠㅠ");
+        		else System.out.println("비겼습니다.");
+        	}
+        	else if(c==2){
+        		System.out.println("컴퓨터 : 바위");
+        		System.out.println(name+" : "+rsp);
+        		if (rsp.equals("보")) {
+        			System.out.println("이겼습니다."); break;
+        		}
+        		else if (rsp.equals("가위")) System.out.println("졌습니다ㅠㅠ");
+        		else System.out.println("비겼습니다.");
+        	}
+        	else {
+        		System.out.println("컴퓨터 : 보");
+        		System.out.println(name+" : "+rsp);
+        		if (rsp.equals("가위")) {
+        			System.out.println("이겼습니다."); break;
+        		}
+        		else if (rsp.equals("바위")) System.out.println("졌습니다ㅠㅠ");
+        		else System.out.println("비겼습니다.");
+        	}
+        	
+
+        	
+        	
     	}
     	
     }

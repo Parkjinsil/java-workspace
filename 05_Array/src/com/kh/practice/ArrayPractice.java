@@ -98,20 +98,20 @@ public class ArrayPractice {
 	 * */
 	public void method4() {
 		
-		int[] number = new int[13];
+		char [] number = new char[14];
 		System.out.print("주민등록번호 : ");
 		String a = sc.nextLine();
 		
-		for (int i=0; i<13; i++) {
+		for (int i=0; i<14; i++) {
 			number[i]= a.charAt(i);
 		}
 		
-		int[] copy = number.clone();
-		for(int j=8; j<13; j++) {
-//			copy[j]= "*";
+		char [] copy = number.clone();
+		for(int j=8; j<14; j++) {
+			copy[j]= '*';
 		}
 			
-		for(int k : copy) {
+		for(char k : copy) {
 			System.out.print(k);
 		}
 		
