@@ -2,28 +2,46 @@ package com.webtoon.model;
 
 public class User {
 
-	public String id;
-	public String password;
-	public String name;
+	private String id;
+	private String password;
+	private String name;
 	
-    public boolean login(){ // 로그인 
-		return false;
+	public User() {
 	}
-	
-	public boolean signUp(){ // 회원가입
-		return false;
+
+	public User(String id, String password, String name) {
+		this.id = id;
+		this.password = password;
+		this.name = name;
 	}
-	
-	public User viewProfile() { // 프로필 보기
-		return null;
+
+	public String getId() {
+		return id;
 	}
-	
-	public User updateProfile() { // 프로필 수정
-		return null;
+
+	public void setId(String id) {
+		this.id = id;
 	}
-	
-	public boolean deleteProfile() { // 계정 삭제
-		return false;
+
+	public String getPassword() {
+		return password;
 	}
-	
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", password=" + password + ", name=" + name + "]";
+	}
+    	
 }

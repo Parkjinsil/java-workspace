@@ -17,9 +17,9 @@ public class ConditionPractice {
 //		cp.practice6();
 //		cp.practice7();
 //		cp.practice8();
-//		cp.practice9();
+		cp.practice9();
 //		cp.practice10();
-		cp.practice11();
+//		cp.practice11();
 		
 	}
 	
@@ -242,7 +242,7 @@ public class ConditionPractice {
     	System.out.print("피연산자2 입력 : ");
     	int b = sc.nextInt();
     	System.out.print("연산자 입력(+,-,*,/,%) : ");
-    	char c = sc.nextLine().charAt(0);
+    	char c = sc.next().charAt(0);
     	
     	int d=0;
     	
@@ -252,7 +252,10 @@ public class ConditionPractice {
     	else if (c == '/') d=a/b;
     	else if (c == '%') d=a%b;
     	
-    	if (c=='+'||c=='-'||c=='*'||c=='/'||c=='%') System.out.println(d); // 요게 싫으시다면~~ switch문으로 바꿔보는 것도 좋아요! 앗! 그럼 각각 출력하는 코드가 더 낫게 되네요;;;;
+    	if (c=='+'||c=='-'||c=='*'||c=='/'||c=='%') {
+    		if (a<=0 || b<=0) System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다.");
+    		else System.out.println(d);
+    	}
     	else System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다."); 
     }
 
