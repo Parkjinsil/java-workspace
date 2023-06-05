@@ -160,7 +160,7 @@ public class D_While {
 					+ "--------------------------------");
 			
 			System.out.println("선택 > ");
-			// Integer.parseInk : Integer 클래스의 parseInt 메소드
+			// Integer.parseInt() : Integer 클래스의 parseInt 메소드
 			int menu = Integer.parseInt(sc.nextLine());
 			switch (menu) {
 			case 1: 

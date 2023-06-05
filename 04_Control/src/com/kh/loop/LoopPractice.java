@@ -91,7 +91,7 @@ class LoopPractice {
     public void method4() {
 
     	while(true) {
-    		int num = (int) (Math.random()*10);
+    		int num = (int) (Math.random()*11);
     		System.out.println(num);
     		if (num==0) break;
     	}

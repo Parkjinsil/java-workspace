@@ -12,8 +12,8 @@ public class ArrayPractice {
 		ArrayPractice ap = new ArrayPractice();
 //		ap.method1();
 //		ap.method2();
-//		ap.method3();
-		ap.method4();
+		ap.method3();
+//		ap.method4();
 //		ap.method5();
 		
 	}
@@ -77,12 +77,9 @@ public class ArrayPractice {
 			if(menu[i].equals(a)) {
 				System.out.println("배달 가능"); break;
 			}
-			else {
-				if (i==menu.length-1) {
-					System.out.println("배달 불가능"); break;
-				}
-				else i++;
-			}
+			else if(i==menu.length-1) {
+				System.out.println("배달 불가능"); break;
+			} else i++;
 		}
 		
 	}

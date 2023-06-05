@@ -45,7 +45,7 @@ public class A_Array {
 		/*
 		 * - 배열을 생성하고 초기화 해주지 않아도 문제없이 출력!
 		 * - JVM이 지정한 기본값으로 배열이 초기화
-		 *   (정수형 : 0, 실수형 : 0.0, 문자형 : \ㅕ0000, 논리형 : false, 참조형 : null)
+		 *   (정수형 : 0, 실수형 : 0.0, 문자형 : \n0000, 논리형 : false, 참조형 : null)
 		 */
 		// 초기화!
 		score[0] = 100;
@@ -165,7 +165,7 @@ public class A_Array {
 	/*
 	 * 2) System 클래스에서 제공하는 arraycopy() 메소드를 이용한 깊은 복사
 	 *    [표현법]
-	 *    System.arraycopy(원본 배열, 복사 시작 인덱스, 복사본 시작 인덱스, 복사할 길이);
+	 *    System.arraycopy(원본 배열, 복사 시작 인덱스, 복사본, 시작 인덱스, 복사할 길이);
 	 */
 	public void method7() {
 		
