@@ -52,5 +52,5 @@ public class Farm {
 		Farm other = (Farm) obj;
 		return Objects.equals(kind, other.kind) && Objects.equals(name, other.name);
 	}
-	
+
 }
