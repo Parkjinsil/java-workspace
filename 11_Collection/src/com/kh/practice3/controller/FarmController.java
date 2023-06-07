@@ -40,7 +40,7 @@ public class FarmController {
 		// 존재하지 않을 경우 false 반환
 		Set<Farm> keys = hMap.keySet();
 		for(Farm farm : keys) {
-			if(farm.equals(f)) {
+			if(farm.hashCode()==f.hashCode()) {
 				hMap.remove(f);
 				return true;
 			}
