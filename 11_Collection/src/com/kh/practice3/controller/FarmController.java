@@ -97,7 +97,7 @@ public class FarmController {
 		// 아니면 false 반환
 		Set<Farm> keys = hMap.keySet();
 		for(Farm farm : keys) {
-			if(list.contains(f)) {
+			if(list.hashCode()==f.hashCode()) {
 				list.remove(farm);
 				hMap.put(f, hMap.get(f)+1);
 				return true;
