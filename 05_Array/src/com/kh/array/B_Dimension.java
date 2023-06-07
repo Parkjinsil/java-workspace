@@ -31,7 +31,7 @@ public class B_Dimension {
 	 *      ....
 	 */
 	
-	// 2) 선언과 동시에 초기와
+	// 2) 선언과 동시에 초기화 
 	public void method1() {
 		
 		int[][] arr = new int [][] {{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}, {11, 12, 13, 14, 15}};
@@ -115,10 +115,10 @@ public class B_Dimension {
 	public static void main(String[] args) {
 
 		B_Dimension b = new B_Dimension();
-//		b.method1();
+		b.method1();
 //		b.method2();
 //		b.method3();
-		b.method4();
+//		b.method4();
 		
 	}
 

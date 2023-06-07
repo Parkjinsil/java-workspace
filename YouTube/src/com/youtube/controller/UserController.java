@@ -4,37 +4,24 @@ import com.youtube.model.User;
 
 public class UserController {
 
-	User user = null;
-	
-	public boolean login(String id, String password) { // 로그인
-		if(user!=null && user.getId().equals(id) && user.getPassword().equals(password)) {
-			return true;
-		}
+	public boolean login(){ // 로그인 
 		return false;
 	}
-
-	public void signUp(User user) { // 회원가입
-		this.user = user;
+	
+	public boolean signUp(){ // 회원가입
+		return false;
 	}
-
-	public User viewProfile() { // 프로필 보기(로그인 된 경우)
-		if(login(user.getId(), user.getPassword())) {
-			return user;
-		}
+	
+	public User viewProfile() { // 프로필 보기
 		return null;
 	}
-
-	public User updateProfile(User user) { // 프로필 수정(로그인 된 경우)
-		if(login(user.getId(), user.getPassword())) {
-			return user = user;
-		}
-		return this.user;
+	
+	public User updateProfile() { // 프로필 수정
+		return null;
 	}
-
-	public void deleteProfile(String id) { // 계정 삭제
-		if(user.getId().equals(id)) {
-			user = null;
-		}
+	
+	public boolean deleteProfile() { // 계정 삭제
+		return false;
 	}
-
+	
 }
