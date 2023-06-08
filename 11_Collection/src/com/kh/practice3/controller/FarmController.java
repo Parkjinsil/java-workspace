@@ -17,12 +17,11 @@ public class FarmController {
 		
 //		System.out.println(hMap.put(f, amount));
 		
-		Set<Farm> keys = hMap.keySet();
-		for(Farm farm : keys) {
-			if(hMap.containsKey(f)) return false;
-		}
-		hMap.put(f, amount);
-		return true;
+ 	    if(!hMap.containsKey(f)) {
+ 	    	hMap.put(f, amount);
+ 			return true;
+ 	    }
+		return false;
 		// containsKey() : map에 key가 존재하는가
 		// 전달 받은 f가 hMap 안에 key로 존재하지 않을 때
 		// f와 amount를 각각 키와 값으로 저장 후 true 반환
@@ -38,12 +37,9 @@ public class FarmController {
 		// hMap에 f 삭제 후 true 반환
 		
 		// 존재하지 않을 경우 false 반환
-		Set<Farm> keys = hMap.keySet();
-		for(Farm farm : keys) {
-			if(farm.hashCode()==f.hashCode()) {
-				hMap.remove(f);
-				return true;
-			}
+		if(hMap.containsKey(f)) {
+			hMap.remove(f);
+			return true;
 		}
 		return false;
 
@@ -55,12 +51,9 @@ public class FarmController {
 		// f와 amount 저장 후 true 반환
 		
 		// 존재하지 않을 경우 false 반환
-		Set<Farm> keys = hMap.keySet();
-		for(Farm farm : keys) {
-			if(farm.getName().equals(f.getName())) {
-				hMap.put(f, amount);
-				return true;
-			}
+		if(hMap.containsKey(f)) {
+			hMap.put(f, amount);
+			return true;
 		}
 		return false;
 	}
@@ -76,15 +69,10 @@ public class FarmController {
 		
 		// 전달 받은 f가 hMap 안에 존재하면서 그 f의 수량이 1개 이상 일 때
 		// list에 f 추가, 그리고 hMap에 f 수량 1 감소, true 반환
-		
-		// 존재하지 않으면 false 반환
-		Set<Farm> keys = hMap.keySet();
-		for(Farm farm : keys) {
-			if(hMap.containsKey(f) && hMap.get(f)>=1) {
-				list.add(f);
-				hMap.put(f, hMap.get(f)-1);
-				return true;
-			}
+		if(hMap.containsKey(f) && hMap.get(f)>=1) {
+			list.add(f);
+			hMap.put(f, hMap.get(f)-1);
+			return true;
 		}
 		return false;
 	}
@@ -95,13 +83,10 @@ public class FarmController {
 		// list에 f 삭제, 그리고 hMap에 f 수량 1 증가, true 반환
 		
 		// 아니면 false 반환
-		Set<Farm> keys = hMap.keySet();
-		for(Farm farm : keys) {
-			if(list.hashCode()==f.hashCode()) {
-				list.remove(farm);
-				hMap.put(f, hMap.get(f)+1);
-				return true;
-			}
+		if(list.contains(f)) {
+			list.remove(f);
+			hMap.put(f, hMap.get(f)+1);
+			return true;
 		}
 		return false;
 	}
