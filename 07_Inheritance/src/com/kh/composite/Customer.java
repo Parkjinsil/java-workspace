@@ -10,8 +10,8 @@ package com.kh.composite;
 
 public class Customer extends Object{
   
-	protected String name;       // 고객 이름
-	protected String grade;      // 고객 등급
+	protected String name;        // 고객 이름
+	protected String grade;       // 고객 등급
 	protected int bonusPoint;    // 보너스 포인트
 	protected double bonusRatio; // 보너스 적립 비율
 
