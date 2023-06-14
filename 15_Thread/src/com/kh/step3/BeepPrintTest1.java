@@ -2,6 +2,9 @@ package com.kh.step3;
 
 import java.awt.Toolkit;
 
+import com.kh.step2.ComeThread;
+import com.kh.step2.GoThread;
+
 public class BeepPrintTest1 {
 
 	public static void main(String[] args) {
@@ -21,6 +24,8 @@ public class BeepPrintTest1 {
 			} catch (InterruptedException e) {}
 		}
 		
+		
+
 	}
 
 }
