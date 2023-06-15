@@ -16,10 +16,11 @@ public class ChattClient {
 	public static void main(String[] args) {
 	
 		try {
-			InetAddress ip = InetAddress.getLocalHost();
+//			InetAddress ip = InetAddress.getLocalHost();
 			
 			// 1. 소켓 생성
-			Socket s = new Socket(ip.getHostAddress(), 60000);
+//			Socket s = new Socket(ip.getHostAddress(), 60000);
+			Socket s = new Socket("192.168.10.46", 60000);
 			
 			// 2. 스트림
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
