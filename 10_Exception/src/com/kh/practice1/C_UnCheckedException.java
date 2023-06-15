@@ -49,7 +49,7 @@ public class C_UnCheckedException {
 	
 	// ArithmeticException
 	public void method3() {
-		// 나누기 연산에서 부모가 0인 경우 예외 발생
+		// 나누기 연산에서 분모가 0인 경우 예외 발생
 		try {
 			int result = 10/0;
 		} catch(ArithmeticException e) {
