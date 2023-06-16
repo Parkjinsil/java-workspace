@@ -19,8 +19,8 @@ import com.kh.list.model.Person;
 public class A_ArrayList {
 	public static void main(String[] args) {
 		A_ArrayList a = new A_ArrayList();
-//		a.method1();
-		a.method2();
+		a.method1();
+//		a.method2();
 //		a.method3();
 	}
 		
