@@ -1,7 +1,6 @@
 package study;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.stream.IntStream;
 
 public class Java {
 	
@@ -63,13 +62,80 @@ public class Java {
 	 *    
 	 *  Set
 	 *  -> HashSet : Set 인터페이스를 구현한 대표적인 컬렉션 클래스
-	 *  
-	 *  
+	 *  -> TreeSet : 저장과 동시에 자동 오름차순 정
+	 *  : 중복되면 자동으로 앞거 덮어버림
+	 *    -> 중복은 객체의 주소값을 가지고 비교하기 때문에
+	 *       내용 같아도 모두 다른 객체로 인식해서 중복 제거 x
+	 *       따라서 Person 클래스에서 hashCode(), equals() 메서드 재정의
+	 *    implements Comparable<Person> 먼저하고
+	 *    
+	 *    @Override
+	 *    public int hashCode() {
+	 *        return Objects.hash(age, name);
+	 *    }
+	 *    
+	 *    @Override
+	 *    public boolean equals(Object obj) {
+	 *        if (this == obj)
+	 *          return true;
+	 *        if (obj == null)
+	 *          return false;
+	 *        if (getClass() != obj.getClass())
+	 *          return false;
+	 *        Person other = (Person) obj;
+	 *        return age == other.age && Objects.equals(name, other.name);
+	 *    }
+	 *    
+	 *    @Override
+	 *    public int compareTo(Person o) {
+	 *        return this.name.compareTo(o.name) * -1; (이름으로 내림차순 비교)
+	 *    }
+	 *    
+	 *   Iterator
+	 *   컬렉션에 저장된 요소를 접근하는데 사용하는 인터페이스
+	 *   Iterator()를 호출해서 Iterator를 구현한 객체를 얻어서 사용
+	 *   
+	 *   
+	 *   
+	 *   <12.Stream>
+	 *   스트림 (Stream) : 다양한 데이터 소스를 표준화된 방법으로 다루기 위한 것
+	 *                   데이터의 흐름
+	 *   스트림의 특징
+	 *   - 데이터를 읽기만 할 뿐 변경 x
+	 *   - Iterator처럼 일회용
+	 *   - 내부 반복 처리
+	 *   
+	 *   스트림 종류
+	 *   - java.util.stream 패키지에 존재
+	 *   
+	 *   Stream API
+	 *   - 스트림은 자바 8부터 추가된 기능으로 
+	 *     컬렉션(배열)의 저장 요소들을 하나씩 참조해서 람다식으로 처리할 수 있게 해주는 반복자
+     *   - 내부 반복자를 사용해서 중간 처리(intermediate), 최종 처리(terminal) 작업을 수행
+     *   - 중간 처리 : 반복, 매핑(타입변환), 필터링, 정렬 등
+     *   - 최종 처리 : 반복, 카운팅, 평균, 총합 등의 집계 처리
+     *   - 중간 처리와 최종 처리 메서드를 구분하는 방법 : 리턴타
+     *   - 리턴 타입이 Stream : 중간 처리 메서드
+     *   - 리턴 타입이 기본 타입 / Optional 객체 : 최종 처리 메서드
+     *   - 지연된 연산 : 최종 연산이 수행되기 전까지는 중간 연산이 수행x
+	 *                 
+	 *   숫자 범위로 스트림 생성 방법
+	 *   - IntStream, LongStream, DoubleStream의 
+	 *     range(), rangeClosed() 메서드 이용
+	 *   배열로부터 스트림 생성 방법
+	 *   - Arrays.stream(배열) 메서드로 스트림 생성
+	 *   
+	 *   
+	 *    
+	 *    
 	 */
 	
 	public static void main(String[] args) {
 
-		
+		IntStream st = IntStream.range(1, 10);
+		int sum = st.sum();
+		System.out.println(sum
+				);
 	
 	}
 	

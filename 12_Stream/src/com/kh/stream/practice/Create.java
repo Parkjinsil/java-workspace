@@ -38,7 +38,7 @@ public class Create {
 	}
 	
 	// 숫자 범위로 스트림을 생성하는 방법
-	// -IntStream, LongStream, DoubleStram의 range(), rangeClosed() 메서드를 이용해서 생성
+	// -IntStream, LongStream, DoubleSteam의 range(), rangeClosed() 메서드를 이용해서 생성
 	public void method1() {
 		// 첫 번째 매개 값 ~ 두 번째 매개 값 이전까지의 값을 요소로 가지는 스트림 객체를 생성
 		IntStream stream = IntStream.range(1, 10);
