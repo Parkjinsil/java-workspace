@@ -8,7 +8,7 @@ import com.kh.list.model.Person;
 	/*
 	 * 컬렉션: 자바에서 제공하는 자료구조를 담당하는 프레임워크
 	 * java.util 패키지에 컬렉션과 관련된 인터페이스 클래스들이 포함
-	 * 컬렉션을 사용하면 데이터 추가 삭제 정렬 들의 처리가
+	 * 컬렉션을 사용하면 데이터 추가 삭제 정렬 등의 처리가
 	 * 간단하게 해결되어 자료구조적 알고리즘을 구현할 필요가 없음
 	 */
 	/*
@@ -19,8 +19,8 @@ import com.kh.list.model.Person;
 public class A_ArrayList {
 	public static void main(String[] args) {
 		A_ArrayList a = new A_ArrayList();
-//		a.method1();
-		a.method2();
+		a.method1();
+//		a.method2();
 //		a.method3();
 	}
 		
@@ -75,7 +75,7 @@ public class A_ArrayList {
 		System.out.println(list.remove(0)+"삭제");
 //		System.out.println(list);
 		
-		// 6. get(int index) : 해당 인덱스로 객체 가져오기
+		// 6. get(int index) : 해당 인덱스 객체 가져오기
 		System.out.println(list.get(0));
 		
 		// 7. subList(int index1, int index2) : 추출해서 새로운 List로 반환
@@ -110,7 +110,7 @@ public class A_ArrayList {
 		
 		// 나이 순서대로 출력 --> 이름 순서대로 출력
 		/* 
-		 * Collections.sort() 쓸 때 list는 String(자바에서 제공하는 클래스)이 아니고 우리가 만든 클래스여서, 
+		 * Collections.sort() 쓸 때 Person은 String(자바에서 제공하는 클래스)이 아니고 우리가 만든 클래스여서, 
 		 * Person클래스 가서 implements Comparable<Person> 해주고 오버라이드 해줘야함
 		 */
 		Collections.sort(list);
@@ -135,13 +135,12 @@ public class A_ArrayList {
 		
 		System.out.println(list.indexOf("apple"));
 		
-		
 		// 12. 오름차순 정렬
 		Collections.sort(list);
 		System.out.println(list);
 		
 		// 13. 내림차순 정렬
-		Collections.reverse(list); /* 오른차순 정렬후 reverse했기 때문에 내림차순이 된거임*/
+		Collections.reverse(list); /* 오름차순 정렬후 reverse했기 때문에 내림차순이 된거임*/
 		System.out.println(list);
 		
 	}

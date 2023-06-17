@@ -14,8 +14,8 @@ public class C_UnCheckedException {
 		C_UnCheckedException c = new C_UnCheckedException();
 //		c.method1();
 //		c.method2();
-//		c.method3();
-		c.method4();
+		c.method3();
+//		c.method4();
 		
 	}
 	
@@ -29,6 +29,7 @@ public class C_UnCheckedException {
 			try {
 				System.out.println(str[i]); //0,1,2,3
 			} catch(ArrayIndexOutOfBoundsException e) {
+//				e.printStackTrace();
 				System.out.println(e.getMessage());
 			}
 			i++;
@@ -41,13 +42,14 @@ public class C_UnCheckedException {
 		try {
 			int[] arr = new int[-3];
 		} catch(NegativeArraySizeException e) {
+//			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
 	}
 	
 	// ArithmeticException
 	public void method3() {
-		// 나누기 연산에서 부모가 0인 경우 예외 발생
+		// 나누기 연산에서 분모가 0인 경우 예외 발생
 		try {
 			int result = 10/0;
 		} catch(ArithmeticException e) {
