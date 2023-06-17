@@ -3,7 +3,7 @@ package com.kh.practice1;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class E_SubClass extends E_SuperClass {
+public class E_SubClass extends F_SuperClass {
 	
 //	@Override
 //	public void method() {

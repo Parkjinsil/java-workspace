@@ -11,8 +11,8 @@ public class ArrayPractice {
 		
 		ArrayPractice ap = new ArrayPractice();
 //		ap.method1();
-//		ap.method2();
-		ap.method3();
+		ap.method2();
+//		ap.method3();
 //		ap.method4();
 //		ap.method5();
 		
