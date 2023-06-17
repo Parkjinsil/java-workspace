@@ -13,11 +13,11 @@ public class MemberController {
 	
 	public boolean updateMember(String id, String name, String password, String email) {
 		
-		for(Member member : m) {
-			if(member.getId().equals(id)) {
-				member.setName(name);
-				member.setPassword(password);
-				member.setEmail(email);
+		for(int i=0; i<3; i++) {
+			if(m[i]!=null && m[i].getId().equals(id)) {
+				m[i].setName(name);
+				m[i].setPassword(password);
+				m[i].setEmail(email);
 				return true;
 			}
 		}
@@ -27,13 +27,37 @@ public class MemberController {
 	
 	public int checkId(String id) {
 		
-		
+		for(int i=0; i<3; i++) {
+			if(m[i]!=null && m[i].getId().equals(id)) {
+				return i;
+			}
+		}
 		
 		return -1;
 	}
 	
 	public Member[] printAll() {
-		return null;
+		return m;
 	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

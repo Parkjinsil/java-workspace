@@ -124,7 +124,7 @@ public class Java {
 	 *     range(), rangeClosed() 메서드 이용
 	 *   배열로부터 스트림 생성 방법
 	 *   - Arrays.stream(배열) 메서드로 스트림 생성
-	 *   
+	 *   - 각 스트림(Stream, IntStream, ...)의 of(배열) 메서드로 스트림을 생성		
 	 *   
 	 *    
 	 *    
@@ -134,8 +134,7 @@ public class Java {
 
 		IntStream st = IntStream.range(1, 10);
 		int sum = st.sum();
-		System.out.println(sum
-				);
+		System.out.println(sum);
 	
 	}
 	
