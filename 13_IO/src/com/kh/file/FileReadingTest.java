@@ -62,7 +62,7 @@ public class FileReadingTest {
 	
 	// 파일에 있는 내용을 읽어서 한 줄 단위로 콘솔에 출력하는 로직
 	public void method1() {
-		// BufferesReader : 버퍼는 데이터가 쌓이기를 기다렸다가 꽉 차게 되면 데이터를 한꺼번에 보냄
+		// BufferedReader : 버퍼는 데이터가 쌓이기를 기다렸다가 꽉 차게 되면 데이터를 한꺼번에 보냄
 		try (BufferedReader br = new BufferedReader(new FileReader(fileName))){
 			String line = "";
 			

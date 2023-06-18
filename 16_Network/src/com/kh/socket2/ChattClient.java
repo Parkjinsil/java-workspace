@@ -16,7 +16,7 @@ public class ChattClient {
 	public static void main(String[] args) {
 	
 		try {
-//			InetAddress ip = InetAddress.getLocalHost();
+//			IsnetAddress ip = InetAddress.getLocalHost();
 			
 			// 1. 소켓 생성
 //			Socket s = new Socket(ip.getHostAddress(), 60000);

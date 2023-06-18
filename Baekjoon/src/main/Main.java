@@ -1,5 +1,7 @@
 package main;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -46,26 +48,26 @@ public class Main {
 //	입력예) 11 25 3 9 15 6 8 7 12 0
 //	출력예) 25 9 6 7
     public void method2() {
-    	
-    	int[] arr = new int[100];
-    	int count =0;
-    	
-    	for(int i=0; i<=100; i++) {
-    		
-    		count++;
-    		
-    		System.out.print("정수 입력 : ");
-    		arr[i]=sc.nextInt();
-    		
-    		if(arr[i]==0) {
-    			break;
-    		}
-    		
-    	}
-    	
-    	for(int i=1; i<count-1; i+=2) {
-    		System.out.print(arr[i]+" ");
-    	}
+    	try {
+			InetAddress ip = InetAddress.getByName("google.com");
+			System.out.println("getHostName(): " + ip.getHostName()); //호트스 이름 반환
+			System.out.println("getHostAddress():" + ip.getHostAddress()); // 호트스의 IP 주소 반환
+			System.out.println();
+			
+			ip = InetAddress.getLocalHost();
+			System.out.println("getHostName(): " + ip.getHostName());
+			System.out.println("getHostAddress(): " + ip.getHostAddress());
+			System.out.println();
+			
+			InetAddress[] ipArr = InetAddress.getAllByName("naver.com");
+			
+			for(int i=0; i<ipArr.length; i++) {
+				System.out.println("ipArr[" + i + "] : " + ipArr[i].getHostAddress());				
+			}
+			
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}
     	
     }
     
